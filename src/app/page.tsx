@@ -111,24 +111,74 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Info Banner */}
-        <div style={{ background:'linear-gradient(135deg,rgba(255,255,255,.65),rgba(255,248,238,.6))', borderRadius:'20px', padding:'1.6rem 2rem', border:'1px solid rgba(200,149,106,.15)', animation:'fadeUp .7s .35s ease both', display:'flex', gap:'1.2rem', alignItems:'flex-start' }}>
-          <div style={{ fontSize:'2rem', flexShrink:0 }}>🔑</div>
-          <div>
-            <div style={{ fontFamily:"'Noto Serif KR',serif", fontWeight:600, color:'#7c5c3e', marginBottom:'.35rem' }}>API 키 설정 안내</div>
-            <div style={{ color:'#b89a7a', fontSize:'.83rem', lineHeight:1.75 }}>
-              Vercel 프로젝트 설정 → <strong>Environment Variables</strong>에서<br/>
-              <code style={{ background:'rgba(200,149,106,.1)', padding:'.1rem .4rem', borderRadius:'4px', fontSize:'.8rem' }}>GEMINI_API_KEY</code> 와 <code style={{ background:'rgba(80,171,120,.1)', padding:'.1rem .4rem', borderRadius:'4px', fontSize:'.8rem' }}>OPENAI_API_KEY</code> 를 등록하세요.
+        {/* About Section */}
+        <div style={{ animation:'fadeUp .7s .35s ease both' }}>
+
+          {/* Tool Description */}
+          <div style={{ background:'linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,248,238,.65))', borderRadius:'20px', padding:'2rem', border:'1px solid rgba(200,149,106,.15)', marginBottom:'1.2rem' }}>
+            <div style={{ display:'flex', alignItems:'center', gap:'.8rem', marginBottom:'1.2rem' }}>
+              <span style={{ fontSize:'1.6rem' }}>🕊️</span>
+              <div style={{ fontFamily:"'Noto Serif KR',serif", fontWeight:700, color:'#7c5c3e', fontSize:'1.05rem' }}>이 도구는 소형교회 목사님들을 위해 만들어졌습니다</div>
+            </div>
+            <p style={{ color:'#9b7a5a', fontSize:'.88rem', lineHeight:1.9, marginBottom:'1rem' }}>
+              대형교회와 달리 혼자 모든 사역을 감당해야 하는 소형교회 목회자분들의 짐을 조금이나마 덜어드리고자 합니다.
+              설교 준비에 드는 시간을 줄이고, 주일학교 교육 자료를 손쉽게 만들 수 있도록 AI 기술로 돕겠습니다.
+            </p>
+            <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(200px,1fr))', gap:'.8rem' }}>
+              {[
+                { icon:'📖', title:'설교 연구 지원', desc:'본문 배경·원어·3대지·적용점을 AI가 자동 분석' },
+                { icon:'🎨', title:'주일학교 이미지', desc:'성경 이야기를 아이들이 좋아할 그림으로 즉시 생성' },
+                { icon:'🔜', title:'추후 업데이트 예정', desc:'심방 기도문, 주보 제작, 광고 문자 등 추가 계획 중' },
+              ].map(item => (
+                <div key={item.title} style={{ background:'rgba(255,255,255,.6)', borderRadius:'14px', padding:'1rem', border:'1px solid rgba(200,149,106,.12)' }}>
+                  <div style={{ fontSize:'1.3rem', marginBottom:'.4rem' }}>{item.icon}</div>
+                  <div style={{ fontWeight:700, color:'#7c5c3e', fontSize:'.88rem', marginBottom:'.3rem' }}>{item.title}</div>
+                  <div style={{ color:'#b89a7a', fontSize:'.8rem', lineHeight:1.6 }}>{item.desc}</div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
 
-        <div style={{ textAlign:'center', marginTop:'3rem', animation:'fadeUp .7s .45s ease both' }}>
-          <div style={{ display:'inline-block', padding:'1rem 2rem', borderRadius:'16px', background:'rgba(255,255,255,.4)', border:'1px solid rgba(200,149,106,.1)' }}>
-            <div style={{ color:'#c8b090', fontSize:'.82rem', fontStyle:'italic', lineHeight:1.8, fontFamily:"'Noto Serif KR',serif" }}>
-              "내가 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라"
+          {/* Contact & Donation */}
+          <div style={{ display:'grid', gridTemplateColumns:'repeat(auto-fit,minmax(260px,1fr))', gap:'1rem', marginBottom:'1.2rem' }}>
+            <div style={{ background:'linear-gradient(135deg,rgba(255,255,255,.75),rgba(240,248,255,.65))', borderRadius:'18px', padding:'1.5rem', border:'1px solid rgba(100,149,200,.15)' }}>
+              <div style={{ display:'flex', alignItems:'center', gap:'.6rem', marginBottom:'.8rem' }}>
+                <span style={{ fontSize:'1.3rem' }}>✉️</span>
+                <div style={{ fontFamily:"'Noto Serif KR',serif", fontWeight:700, color:'#3a5c8c', fontSize:'.95rem' }}>업데이트 요청 / 문의</div>
+              </div>
+              <p style={{ color:'#6a7a9a', fontSize:'.83rem', lineHeight:1.7, marginBottom:'.8rem' }}>
+                필요한 기능이나 개선사항이 있으시면 언제든지 메일로 보내주세요. 목사님들의 의견이 곧 다음 업데이트가 됩니다.
+              </p>
+              <a href="mailto:phil413project@gmail.com"
+                style={{ display:'inline-flex', alignItems:'center', gap:'.4rem', background:'rgba(100,149,200,.1)', border:'1px solid rgba(100,149,200,.25)', borderRadius:'10px', padding:'.5rem 1rem', color:'#3a5c8c', fontSize:'.82rem', fontWeight:600, textDecoration:'none' }}>
+                📧 phil413project@gmail.com
+              </a>
             </div>
-            <div style={{ color:'#c8a070', fontSize:'.72rem', marginTop:'.3rem', fontWeight:500 }}>빌립보서 4:13</div>
+
+            <div style={{ background:'linear-gradient(135deg,rgba(255,255,255,.75),rgba(255,248,225,.65))', borderRadius:'18px', padding:'1.5rem', border:'1px solid rgba(200,170,80,.15)' }}>
+              <div style={{ display:'flex', alignItems:'center', gap:'.6rem', marginBottom:'.8rem' }}>
+                <span style={{ fontSize:'1.3rem' }}>🙏</span>
+                <div style={{ fontFamily:"'Noto Serif KR',serif", fontWeight:700, color:'#8c6a20', fontSize:'.95rem' }}>개발 후원</div>
+              </div>
+              <p style={{ color:'#9a7a40', fontSize:'.83rem', lineHeight:1.7, marginBottom:'.8rem' }}>
+                이 도구가 사역에 도움이 되셨다면 지속적인 개발과 서버 운영을 위한 후원을 부탁드립니다. 감사합니다 🙏
+              </p>
+              <div style={{ background:'rgba(200,170,80,.08)', border:'1px solid rgba(200,170,80,.2)', borderRadius:'10px', padding:'.7rem 1rem' }}>
+                <div style={{ color:'#8c6a20', fontSize:'.8rem', fontWeight:600, marginBottom:'.2rem' }}>카카오뱅크</div>
+                <div style={{ color:'#6a5010', fontSize:'.88rem', fontWeight:700, letterSpacing:'.03em' }}>3333-32-1670233</div>
+                <div style={{ color:'#9a7a40', fontSize:'.78rem', marginTop:'.15rem' }}>예금주: 필사일삼</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scripture */}
+          <div style={{ textAlign:'center' }}>
+            <div style={{ display:'inline-block', padding:'1rem 2rem', borderRadius:'16px', background:'rgba(255,255,255,.4)', border:'1px solid rgba(200,149,106,.1)' }}>
+              <div style={{ color:'#c8b090', fontSize:'.82rem', fontStyle:'italic', lineHeight:1.8, fontFamily:"'Noto Serif KR',serif" }}>
+                "내가 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라"
+              </div>
+              <div style={{ color:'#c8a070', fontSize:'.72rem', marginTop:'.3rem', fontWeight:500 }}>빌립보서 4:13</div>
+            </div>
           </div>
         </div>
       </main>
